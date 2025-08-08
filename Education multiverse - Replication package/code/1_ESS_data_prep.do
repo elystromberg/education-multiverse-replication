@@ -426,9 +426,9 @@ foreach var in c_ed_30 c_ed_25 tyrsa tyrspda tyrspaa tyrsfa tyrsma  {
 * make sure to have gtools installed
 
 * respondent 
-gquantiles qgeduyrs25 = c_ed_25, xtile nq(100) by(cntry gndr)
-gquantiles qgeduyrs30 = c_ed_30, xtile nq(100) by(cntry gndr)
-gquantiles qgtyrsa = tyrsa, xtile nq(100) by(cntry gndr)
+gquantiles qgeduyrs25 = c_ed_25, xtile nq(100) by(cntry)
+gquantiles qgeduyrs30 = c_ed_30, xtile nq(100) by(cntry)
+gquantiles qgtyrsa = tyrsa, xtile nq(100) by(cntry)
 * parent
 
 gquantiles qgtyrsfa = tyrsfa, xtile nq(100) by(cntry)
@@ -446,5 +446,6 @@ gquantiles qgtyrspaa = tyrspaa, xtile nq(100) by(cntry)
 //save data ready for modeling
 save						"$DATA/data/ESS_1-10_rdy.dta", replace
 use							"$DATA/data/ESS_1-10_rdy.dta", clear
+
 
 
