@@ -17,15 +17,15 @@ corr <- read_dta('data\\models_corr.dta') %>%
 odds <- read_dta('data\\models_odds.dta') %>% 
   #  select(-m11, -m12) %>% 
   mutate(parameter="odds")
-posit <- read_dta('data\\models_posit.dta') %>% 
-  mutate(parameter="posit")
+pos <- read_dta('data\\models_pos.dta') %>% 
+  mutate(parameter="pos")
 unidiff <- read_dta('data\\models_unidiff.dta') %>% 
   mutate(parameter="unidiff") %>% 
   mutate(m1=std)
 data <- reg %>%
-  bind_rows(corr, odds, posit, unidiff)
+  bind_rows(corr, odds, pos, unidiff)
 
-parameterlist <- c("reg", "corr", "odds", "posit", "unidiff", "all")
+parameterlist <- c("reg", "corr", "odds", "pos", "unidiff", "all")
 genderlist <- c("", "women", "men")
 
 # Convert country codes to full country names
@@ -179,4 +179,5 @@ filename <- paste0("out\\kdens", ".pdf")
 pdf(filename, height = 5, width = 7)
 print(box)
 dev.off()
+
 
