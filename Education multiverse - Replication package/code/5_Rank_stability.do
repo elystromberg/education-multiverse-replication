@@ -10,6 +10,10 @@ global DATA "$MyProject"
 * Stability plots for global rankings 
 ********************************************
 
+* Set theme
+ssc install SCHEME_TUFTE
+set scheme tufte
+
 * Select outcome variable: rank (rank) or coefficient (m1)
 global outcome rank // m1
 * Select estimation: linear (regress) or ordered (ologit)
